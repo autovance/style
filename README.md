@@ -26,8 +26,14 @@ module.exports = {
     // Contains rules for typescript
     "@autovance/eslint-config-autovance/typescript",
   ],
+  "plugins: [
+    // Implementation specific plugins like mocha, jest
+  ]
   "rules": {
     // Style overrides
+    // Implementation Specific rules like
+    // "mocha/no-exclusive-tests": 2,
+    // "jest/no-exclusive-tests": 2
   }
 }
 ```

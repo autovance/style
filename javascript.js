@@ -5,10 +5,7 @@ module.exports = {
     "@autovance/eslint-config-autovance/common"
   ],
   "env": {
-    "node": true,
-    "mocha": true,
-    "jest": true,
-    "es6": true
+    "mocha": true
   },
   "plugins": [],
   "rules": {

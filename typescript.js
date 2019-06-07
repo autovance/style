@@ -7,9 +7,7 @@ module.exports = {
     "prettier/@typescript-eslint",
   ],
   "env": {
-    "node": true,
-    "jest": true,
-    "es6": true
+    "jest": true
   },
   "rules": {
     "no-undef": "off",
