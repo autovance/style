@@ -10,6 +10,7 @@ module.exports = {
     'no-undef': 'off',
     '@typescript-eslint/camelcase': false,
     '@typescript-eslint/no-explicit-any': false,
-    '@typescript-eslint/no-parameter-properties': false
+    '@typescript-eslint/no-parameter-properties': false,
+    "@typescript-eslint/explicit-function-return-type": false
   }
 };
