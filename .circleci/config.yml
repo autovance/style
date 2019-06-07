@@ -42,8 +42,6 @@ workflows:
 
       - publish:
           context: org-global
-          requires:
-            - audit
           filters:
             branches:
               only: master
