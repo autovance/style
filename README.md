@@ -8,6 +8,8 @@ In the `package.json`:
 
 ```json
 ...
+"prettier": "@autovance/eslint-config-autovance/prettier",
+...
   "devDependencies": {
     "@autovance/eslint-config-autovance": "^1.0.0"
   }

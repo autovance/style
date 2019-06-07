@@ -38,6 +38,12 @@
     "url": "https://github.com/autovance/style/issues"
   },
   "homepage": "https://github.com/autovance/style#readme",
+  "eslintConfig": {
+    "extends": [
+      "./common.js"
+    ]
+  },
+  "prettier": "./prettier",
   "peerDependencies": {
     "eslint": ">= 5",
     "prettier": ">= 1",
@@ -45,7 +51,6 @@
     "eslint-plugin-prettier": ">= 1",
     "eslint-plugin-node": ">= 9"
   },
-  "prettier": "./prettier",
   "dependencies": {
     "@typescript-eslint/eslint-plugin": "^1.9.0",
     "@typescript-eslint/parser": "^1.9.0",
