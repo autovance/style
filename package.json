@@ -1,6 +1,6 @@
 {
   "name": "@autovance/eslint-config-autovance",
-  "version": "1.0.0",
+  "version": "0.0.0-semantically-released",
   "description": "Autovance Javascript and Typescript ESLint Styles",
   "main": "index.js",
   "scripts": {
