@@ -1,0 +1,49 @@
+version: 2
+
+jobs:
+  audit:
+    docker:
+      - image: &node_image circleci/node:lts
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - run:
+          name: NPM Audit
+          command: |
+            npm -v
+            npm audit
+
+  publish:
+    docker:
+      - image: *node_image
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - run:
+          name: npmrc
+          command: echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+      - deploy:
+          name: Publish
+          when: on_success
+          command: |
+            git config --global user.name Bot Vance
+            git config --global user.email bot@autovance.com
+            npx semantic-release
+
+workflows:
+  version: 2
+
+  test:
+    jobs:
+      - audit:
+          context: org-global
+
+      - publish:
+          context: org-global
+          requires:
+            - audit
+          filters:
+            branches:
+              only: master
