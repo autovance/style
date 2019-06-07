@@ -19,6 +19,7 @@ In the `.eslintrc`:
 ```js
 module.exports = {
   "extends": [
+    // One or many of these base rules
     "@autovance/eslint-config-autovance",
     "@autovance/eslint-config-autovance/javascript",
     "@autovance/eslint-config-autovance/typescript",
