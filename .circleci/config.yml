@@ -34,12 +34,13 @@ jobs:
 
 workflows:
   version: 2
-
-  publish:
+  audit:
     jobs:
       - audit:
           context: org-global
 
+  publish:
+    jobs:
       - publish:
           context: org-global
           filters:
