@@ -10,7 +10,7 @@ module.exports = {
     "jest": true,
     "es6": true
   },
-  "plugins": ["mocha"],
+  "plugins": [],
   "rules": {
     "array-callback-return": 1,
     "one-var": [2, "never"],

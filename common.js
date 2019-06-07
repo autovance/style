@@ -13,7 +13,6 @@ module.exports = {
   "plugins": ["node"],
   "rules": {
     "prettier/prettier": "error",
-    "mocha/no-exclusive-tests": 2,
 
     "no-restricted-syntax": [
       "error",
