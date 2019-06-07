@@ -6,5 +6,7 @@ module.exports = {
     "@autovance/eslint-config-autovance/typescript",
     "@autovance/eslint-config-autovance/javascript",
   ],
-  "rules": {}
+  "rules": {
+    "@typescript-eslint/no-var-requires": "off",
+  }
 }

@@ -12,8 +12,6 @@ module.exports = {
   },
   "plugins": ["mocha"],
   "rules": {
-    "@typescript-eslint/no-var-requires": "off",
-
     "array-callback-return": 1,
     "one-var": [2, "never"],
     "strict": [2, "global"],
