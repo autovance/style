@@ -4,18 +4,18 @@ module.exports = {
   extends: ['@autovance/eslint-config-autovance/common'],
   plugins: [],
   rules: {
-    'array-callback-return': 1,
-    'one-var': [2, 'never'],
-    strict: [2, 'global'],
+    'array-callback-return': 'warn',
+    'one-var': ['error', 'never'],
+    strict: ['error', 'global'],
     'dot-notation': [
-      2,
+      'error',
       {
         allowKeywords: true
       }
     ],
 
     camelcase: [
-      0,
+      'off',
       {
         properties: 'never'
       }
