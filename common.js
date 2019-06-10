@@ -55,12 +55,13 @@ module.exports = {
     'no-spaced-func': 'error',
     'no-trailing-spaces': 'error',
     'no-var': 'error',
-    'no-underscore-dangle': 'off',
-    'no-extra-parens': 'off',
-    'no-fallthrough': 'off',
     'prefer-const': 'error',
     'prefer-rest-params': 'error',
-    'prefer-spread': 'error'
+    'prefer-spread': 'error',
+
+    'no-underscore-dangle': 'off',
+    'no-extra-parens': 'off',
+    'no-fallthrough': 'off'
   },
   overrides: [],
   parserOptions: {
