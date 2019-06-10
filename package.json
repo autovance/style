@@ -61,9 +61,6 @@
     "prettier": "^1.18.2",
     "typescript": "^3.5.1"
   },
-  "devDependencies": {
-    "semantic-release": "^15.13.16"
-  },
   "release": {
     "branch": "master"
   }
