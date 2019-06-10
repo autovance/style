@@ -4,13 +4,11 @@ module.exports = {
   extends: [
     '@autovance/eslint-config-autovance/common',
     'plugin:@typescript-eslint/recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
     'prettier/@typescript-eslint'
   ],
+  parser: '@typescript-eslint/parser',
   rules: {
-    'no-undef': 'off',
-    'constructor-super': 'off',
-    'no-dupe-class-members': 'off',
-    'no-redeclare': 'off',
     '@typescript-eslint/camelcase': false,
     '@typescript-eslint/no-explicit-any': false,
     '@typescript-eslint/no-parameter-properties': false,
