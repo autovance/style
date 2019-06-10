@@ -57,7 +57,10 @@ module.exports = {
     'no-var': 'error',
     'no-underscore-dangle': 'off',
     'no-extra-parens': 'off',
-    'no-fallthrough': 'off'
+    'no-fallthrough': 'off',
+    'prefer-const': 'error',
+    'prefer-rest-params': 'error',
+    'prefer-spread': 'error'
   },
   overrides: [],
   parserOptions: {
