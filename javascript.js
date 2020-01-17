@@ -4,7 +4,7 @@ module.exports = {
   extends: ['@autovance/eslint-config-autovance/common'],
   plugins: [],
   rules: {
-    'array-callback-return': 'warn',
+    'array-callback-return': 'error',
     'one-var': ['error', 'never'],
     strict: ['error', 'global'],
     'dot-notation': [
