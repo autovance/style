@@ -6,7 +6,14 @@ module.exports = {
     '@autovance/eslint-config-autovance/javascript',
     '@autovance/eslint-config-autovance/typescript'
   ],
-  rules: {
-    '@typescript-eslint/no-var-requires': 'off' // conflicts with JS
-  }
+  rules: {},
+  overrides: [
+    {
+      files: ['*.js'],
+      rules: {
+        '@typescript-eslint/no-var-requires': 'off',
+        'constructor-super': 'error'
+      }
+    }
+  ]
 };
