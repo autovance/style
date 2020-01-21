@@ -3,10 +3,17 @@
 module.exports = {
   extends: [
     '@autovance/eslint-config-autovance/common',
-    '@autovance/eslint-config-autovance/typescript',
-    '@autovance/eslint-config-autovance/javascript'
+    '@autovance/eslint-config-autovance/javascript',
+    '@autovance/eslint-config-autovance/typescript'
   ],
-  rules: {
-    '@typescript-eslint/no-var-requires': 'off'
-  }
+  rules: {},
+  overrides: [
+    {
+      files: ['*.js'],
+      rules: {
+        '@typescript-eslint/no-var-requires': 'off',
+        'constructor-super': 'error'
+      }
+    }
+  ]
 };
