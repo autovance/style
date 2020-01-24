@@ -11,8 +11,9 @@ module.exports = {
     {
       files: ['*.js'],
       rules: {
-        '@typescript-eslint/no-var-requires': 'off',
-        'constructor-super': 'error'
+        '@typescript-eslint/no-var-requires': 'off', // JS conflict
+        'constructor-super': 'error',
+        'require-await': 'error' // TS disablesthis  as it can report incorrectly for ts
       }
     }
   ]
