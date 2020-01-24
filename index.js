@@ -13,7 +13,7 @@ module.exports = {
       rules: {
         '@typescript-eslint/no-var-requires': 'off', // JS conflict
         'constructor-super': 'error',
-        'require-await': 'error' // TS disablesthis  as it can report incorrectly for ts
+        'require-await': 'error' // TS disables this  as it can report incorrectly for ts
       }
     }
   ]
