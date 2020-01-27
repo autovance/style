@@ -12,9 +12,10 @@ module.exports = {
     'prettier/prettier': 'error',
 
     'no-restricted-syntax': [
-      'error',
+      'warn',
       { selector: "MethodDefinition[kind='set']", message: 'Property setters are not allowed' },
-      { selector: "MethodDefinition[kind='get']", message: 'Property getters are not allowed' }
+      { selector: "MethodDefinition[kind='get']", message: 'Property getters are not allowed' },
+      { selector: 'MemberExpression > Identifier[name="catch"]', message: 'Promise catch is not allowed. Use try/catch with async/await.' }
     ],
 
     yoda: 'error',
@@ -66,7 +67,6 @@ module.exports = {
     'no-extra-parens': 'off',
     'no-fallthrough': 'off'
   },
-  overrides: [],
   parserOptions: {
     ecmaVersion: 2018,
     sourceType: 'module',
