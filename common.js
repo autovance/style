@@ -65,7 +65,17 @@ module.exports = {
     'no-extra-parens': 'off',
     'no-fallthrough': 'off'
   },
-  overrides: [],
+  overrides: [
+    {
+      files: ['*.js', '*.ts'],
+      rules: {
+        'no-restricted-syntax': [
+          'warn',
+          { selector: 'MemberExpression > Identifier[name="catch"]', message: 'Promise catch is not allowed. Use try/catch with async/await.' }
+        ]
+      }
+    }
+  ],
   parserOptions: {
     ecmaVersion: 2018,
     sourceType: 'module',
