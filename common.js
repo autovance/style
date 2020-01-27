@@ -56,7 +56,7 @@ module.exports = {
     'no-trailing-spaces': 'error',
     'no-var': 'error',
     'no-return-await': 'error',
-    'require-await': 'error',
+    'require-await': 'warning',
 
     'prefer-const': 'error',
     'prefer-rest-params': 'error',

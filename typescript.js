@@ -16,6 +16,6 @@ module.exports = {
     '@typescript-eslint/no-parameter-properties': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
     'require-await': 'off', // must disable the base rule as it can report incorrect errors
-    '@typescript-eslint/require-await': 'error'
+    '@typescript-eslint/require-await': 'warning'
   }
 };
