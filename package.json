@@ -45,21 +45,21 @@
   },
   "prettier": "./prettier",
   "peerDependencies": {
-    "eslint": ">= 5",
-    "prettier": ">= 1",
-    "typescript": ">= 3",
-    "eslint-plugin-prettier": ">= 1",
-    "eslint-plugin-node": ">= 9"
+    "eslint": "6.8.0",
+    "prettier": "1.19.1",
+    "typescript": "3.7.5",
+    "eslint-plugin-prettier": "3.1.2",
+    "eslint-plugin-node": "11.0.0"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^1.10.2",
-    "@typescript-eslint/parser": "^1.10.2",
-    "eslint": "^5.16.0",
-    "eslint-config-prettier": "^4.3.0",
-    "eslint-plugin-node": "^9.1.0",
-    "eslint-plugin-prettier": "^3.1.0",
-    "prettier": "^1.18.2",
-    "typescript": "^3.5.1"
+    "@typescript-eslint/eslint-plugin": "^2.19.0",
+    "@typescript-eslint/parser": "^2.19.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "prettier": "^1.19.1",
+    "typescript": "^3.7.5"
   },
   "release": {
     "branch": "master"
