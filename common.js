@@ -15,7 +15,10 @@ module.exports = {
       'warn',
       { selector: "MethodDefinition[kind='set']", message: 'Property setters are not allowed' },
       { selector: "MethodDefinition[kind='get']", message: 'Property getters are not allowed' },
-      { selector: 'MemberExpression > Identifier[name="catch"]', message: 'Promise catch is not allowed. Use try/catch with async/await.' }
+      {
+        selector: 'MemberExpression > Identifier[name="catch"]',
+        message: 'Avoid Promise.catch - Use try/catch with async/await.'
+      }
     ],
 
     yoda: 'error',
