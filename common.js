@@ -61,6 +61,7 @@ module.exports = {
     'no-var': 'error',
     'no-return-await': 'error',
     'require-await': 'warn',
+    'spaced-comment': ['warn', 'always'],
 
     'prefer-const': 'error',
     'prefer-rest-params': 'error',
