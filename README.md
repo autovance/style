@@ -4,6 +4,14 @@ Autovance Javascript and Typescript ESLint Styles
 
 ## Install
 
+### Automatic
+
+```
+npx @autovance/style
+```
+
+### Manual
+
 ```
 $ npm i --save-dev \
     @autovance/eslint-config-autovance \
@@ -14,8 +22,6 @@ $ npm i --save-dev \
     eslint-plugin-prettier@3 \
     prettier@2
 ```
-
-## Use
 
 In the `package.json`:
 
@@ -36,9 +42,9 @@ In the eslint config:
     // Contains rules for typescript
     "@autovance/eslint-config-autovance/typescript"
   ],
-  "plugins: [
+  "plugins": [
     // Implementation specific plugins like mocha, jest
-  ]
+  ],
   "rules": {
     // Style overrides
     // Implementation Specific rules like
