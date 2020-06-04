@@ -1,6 +1,11 @@
-# style
+<div align="center">
 
-Autovance Javascript and Typescript ESLint Styles
+  <img src="https://cdn.autovance.com/img/repo/style.png" alt="style" />
+
+  <h3>Autovance Javascript and Typescript ESLint Styles</h3>
+</div>
+
+---
 
 ## Install
 
