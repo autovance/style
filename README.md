@@ -19,13 +19,13 @@ $ npm i --save-dev \
 
 In the `package.json`:
 
-```jsonc
+```json
 "prettier": "@autovance/eslint-config-autovance/prettier",
 ```
 
 In the eslint config:
 
-```js
+```jsonc
 {
   "extends": [
     // One of:

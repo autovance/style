@@ -3,6 +3,13 @@
   "version": "0.0.0-semantically-released",
   "description": "Autovance Javascript and Typescript ESLint Styles",
   "main": "index.js",
+  "files": [
+    "prettier",
+    "common.js",
+    "index.js",
+    "javascript.js",
+    "typescript.js"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
