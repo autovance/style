@@ -7,19 +7,19 @@ Autovance Javascript and Typescript ESLint Styles
 ```
 $ npm i --save-dev \
     @autovance/eslint-config-autovance \
-    @typescript-eslint/eslint-plugin@2 \
-    eslint@6 \
+    @typescript-eslint/eslint-plugin@3 \
+    eslint@7 \
     eslint-config-prettier@6 \
     eslint-plugin-node@11 \
     eslint-plugin-prettier@3 \
-    prettier@1
+    prettier@2
 ```
 
 ## Use
 
 In the `package.json`:
 
-```json
+```jsonc
 "prettier": "@autovance/eslint-config-autovance/prettier",
 ```
 
