@@ -48,7 +48,7 @@ async function prompt(question) {
       readline.close();
     });
   });
-  return response.trim().toLowerCase();
+  return response.trim().toLowerCase().charAt(0);
 }
 
 async function installPackages(cwd) {
@@ -91,7 +91,7 @@ void async function () {
     throw new Error('No package.json found in current directory.');
   }
 
-  const cont = await prompt('Do you wish to setup @autovance/style in this package? ([y]es/[n]o) ');
+  const cont = await prompt('Do you wish to setup @autovance/style and its peers in this package? ([y]es/[n]o) ');
   if (cont !== 'y') {
     throw new Error('Aborting.');
   }
@@ -104,11 +104,11 @@ void async function () {
     throw new Error('Invalid type. Aborting.');
   }
 
-  console.log('Installing packages...');
+  console.log('Installing style and peer dependencies...');
 
   await installPackages(process.cwd());
 
-  console.log('Setting up config...');
+  console.log('Setting up eslint config in package.json...');
 
   await setupConfig(packageJSONPath, type);
 
