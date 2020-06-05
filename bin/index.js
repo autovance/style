@@ -11,20 +11,10 @@ const writeFileAsync = promisify(writeFile);
 
 const packageJSONPath = './package.json';
 
-const packages = [
-  '@autovance/eslint-config-autovance',
-  '@typescript-eslint/eslint-plugin@3',
-  'eslint@7',
-  'eslint-config-prettier@6',
-  'eslint-plugin-node@11',
-  'eslint-plugin-prettier@3',
-  'prettier@2'
-];
-
 const styleExtendType = {
-  hybrid: '@autovance/eslint-config-autovance',
   javascript: '@autovance/eslint-config-autovance/javascript',
-  typescript: '@autovance/eslint-config-autovance/typescript'
+  typescript: '@autovance/eslint-config-autovance/typescript',
+  hybrid: '@autovance/eslint-config-autovance'
 };
 
 async function hasValidPackageJSON(path) {
@@ -36,14 +26,14 @@ async function hasValidPackageJSON(path) {
   }
 }
 
-async function prompt(question) {
+async function promptFirstChar(question) {
   const readline = createInterface({
     input: process.stdin,
     output: process.stdout
   });
 
   const response = await new Promise((resolve) => {
-    readline.question(question, (answer) => {
+    readline.question(`${question}\n> `, (answer) => {
       resolve(answer)
       readline.close();
     });
@@ -51,15 +41,33 @@ async function prompt(question) {
   return response.trim().toLowerCase().charAt(0);
 }
 
-async function installPackages(cwd) {
+async function getInstallPackages(type) {
+  const thisPackagesPackageJSONPath = `${__dirname}/../package.json`;
+  const thisPackagesPackageJSONStr = await readFileAsync(thisPackagesPackageJSONPath);
+  const thisPackagesPackageJSON = JSON.parse(thisPackagesPackageJSONStr);
+
+  const {name, peerDependencies} = thisPackagesPackageJSON;
+
+  const isTypescriptOnlyDependency = (pkgName) => /typescript/i.test(pkgName);
+
+  const peerDependencyNames = Object.keys(peerDependencies).filter((pkgName) => {
+    // If we're installing a javascript package, we don't want any typescript dependencies
+    if (type === 'javascript') return !isTypescriptOnlyDependency(pkgName);
+    else return true;
+  });
+
+  return [
+    name,
+    ...peerDependencyNames
+  ];
+}
+
+async function installPackages(cwd, packages) {
   const child = spawn(
     'npm',
     ['install', '--save-dev', ...packages],
     { cwd }
   );
-
-  // child.stdout.pipe(process.stdout);
-  // child.stderr.pipe(process.stderr);
 
   await new Promise((resolve) => child.on('exit', resolve));
 }
@@ -91,14 +99,14 @@ void async function () {
     throw new Error('No package.json found in current directory.');
   }
 
-  const cont = await prompt('Do you wish to setup @autovance/style and its peers in this package? ([y]es/[n]o) ');
+  const cont = await promptFirstChar('Do you wish to setup @autovance/style and its peers in this package?\n y - yes\n n - no');
   if (cont !== 'y') {
     throw new Error('Aborting.');
   }
 
   const styleExtendTypeKeys = Object.keys(styleExtendType);
-  const typePrompts = styleExtendTypeKeys.map((key) => `[${key[0]}]${key.slice(1)}`).join('/');
-  const typeLetter = await prompt(`What type of package is this? (${typePrompts}) `);
+  const typePrompts = styleExtendTypeKeys.map((key) => ` ${key[0]} - ${key}`).join('\n');
+  const typeLetter = await promptFirstChar(`What type of package is this?\n${typePrompts}`);
   const type = styleExtendTypeKeys.find((key) => key.startsWith(typeLetter));
   if (!type) {
     throw new Error('Invalid type. Aborting.');
@@ -106,7 +114,8 @@ void async function () {
 
   console.log('Installing style and peer dependencies...');
 
-  await installPackages(process.cwd());
+  const packages = await getInstallPackages(type);
+  await installPackages(process.cwd(), packages);
 
   console.log('Setting up eslint config in package.json...');
 
