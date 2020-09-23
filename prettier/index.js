@@ -6,5 +6,6 @@ module.exports = {
   tabWidth: 2,
   bracketSpacing: true,
   arrowParens: 'always',
-  semi: true
+  semi: true,
+  trailingComma: 'none'
 };
