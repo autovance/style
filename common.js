@@ -25,7 +25,7 @@ module.exports = {
     'consistent-return': 'warn',
 
     // Base TS&JS Safety
-    eqeqeq: 'error',
+    eqeqeq: ['error', 'always', {null: 'ignore'}],
     'no-eval': 'error',
     'no-with': 'error',
     'no-alert': 'error',
