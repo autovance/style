@@ -42,7 +42,7 @@ workflows:
   publish:
     jobs:
       - publish:
-          context: org-global
+          context: deploy-npm
           filters:
             branches:
               only: master
