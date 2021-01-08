@@ -15,7 +15,9 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-parameter-properties': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off'
-
+    
+    "@typescript-eslint/prefer-includes': 'on'
+    
     // This rule was proposed but is too slow because of the typescript parser requirement.
     // 'require-await': 'off', // must disable the base rule as it can report incorrect errors
     // '@typescript-eslint/require-await': 'warn'
