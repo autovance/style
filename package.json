@@ -8,7 +8,8 @@
     "common.js",
     "index.js",
     "javascript.js",
-    "typescript.js"
+    "typescript.js",
+    "browser.js"
   ],
   "main": "index.js",
   "bin": "bin/index.js",
@@ -61,7 +62,7 @@
     "eslint-plugin-prettier": ">= 3",
     "prettier": ">= 2"
   },
-  "dependencies": {
+  "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^3.1.0",
     "@typescript-eslint/parser": "^3.1.0",
     "eslint": "^7.1.0",
