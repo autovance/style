@@ -8,7 +8,8 @@
     "common.js",
     "index.js",
     "javascript.js",
-    "typescript.js"
+    "typescript.js",
+    "browser.js"
   ],
   "main": "index.js",
   "bin": "bin/index.js",
