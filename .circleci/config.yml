@@ -9,10 +9,10 @@ jobs:
       - attach_workspace:
           at: .
       - run:
-          name: NPM Audit
+          name: Audit
           command: |
-            npm -v
-            npm audit
+            yarn -v
+            yarn audit
 
   publish:
     docker:
