@@ -1,9 +1,10 @@
 #!/usr/bin/env node
+/* eslint-disable no-console */
 
-const {readFile, writeFile, access, constants} = require('fs');
-const {createInterface} = require('readline');
-const {spawn} = require('child_process');
-const {promisify} = require('util');
+const { readFile, writeFile, access, constants } = require('fs');
+const { createInterface } = require('readline');
+const { spawn } = require('child_process');
+const { promisify } = require('util');
 
 const accessAsync = promisify(access);
 const readFileAsync = promisify(readFile);
@@ -34,11 +35,14 @@ async function promptFirstChar(question) {
 
   const response = await new Promise((resolve) => {
     readline.question(`${question}\n> `, (answer) => {
-      resolve(answer)
+      resolve(answer);
       readline.close();
     });
   });
-  return response.trim().toLowerCase().charAt(0);
+  return response
+    .trim()
+    .toLowerCase()
+    .charAt(0);
 }
 
 async function getInstallPackages(type) {
@@ -46,7 +50,7 @@ async function getInstallPackages(type) {
   const thisPackagesPackageJSONStr = await readFileAsync(thisPackagesPackageJSONPath);
   const thisPackagesPackageJSON = JSON.parse(thisPackagesPackageJSONStr);
 
-  const {name, peerDependencies} = thisPackagesPackageJSON;
+  const { name, peerDependencies } = thisPackagesPackageJSON;
 
   const isTypescriptOnlyDependency = (pkgName) => /typescript/i.test(pkgName);
 
@@ -56,18 +60,11 @@ async function getInstallPackages(type) {
     else return true;
   });
 
-  return [
-    name,
-    ...peerDependencyNames
-  ];
+  return [name, ...peerDependencyNames];
 }
 
 async function installPackages(cwd, packages) {
-  const child = spawn(
-    'npm',
-    ['install', '--save-dev', ...packages],
-    { cwd }
-  );
+  const child = spawn('npm', ['install', '--save-dev', ...packages], { cwd });
 
   await new Promise((resolve) => child.on('exit', resolve));
 }
@@ -88,18 +85,20 @@ async function setupConfig(path, type) {
     extends: [...extendsSet],
     plugins: currentEslintConfig.plugins || [],
     rules: currentEslintConfig.rules || {}
-  }
+  };
 
   await writeFileAsync(path, JSON.stringify(packageJSON, null, 2));
 }
 
-void async function () {
+void (async function() {
   const validLocation = await hasValidPackageJSON(packageJSONPath);
   if (!validLocation) {
     throw new Error('No package.json found in current directory.');
   }
 
-  const cont = await promptFirstChar('Do you wish to setup @autovance/style and its peers in this package?\n y - yes\n n - no');
+  const cont = await promptFirstChar(
+    'Do you wish to setup @autovance/style and its peers in this package?\n y - yes\n n - no'
+  );
   if (cont !== 'y') {
     throw new Error('Aborting.');
   }
@@ -122,10 +121,10 @@ void async function () {
   await setupConfig(packageJSONPath, type);
 
   console.log('Done.');
-}()
-.then(() => 0)
-.catch((err) => {
-  console.error(err.message);
-  return 1;
-})
-.then((code) => process.exit(code));
+})()
+  .then(() => 0)
+  .catch((err) => {
+    console.error(err.message);
+    return 1;
+  })
+  .then((code) => process.exit(code));
