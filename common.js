@@ -25,7 +25,7 @@ module.exports = {
     'consistent-return': 'warn',
 
     // Base TS&JS Safety
-    eqeqeq: ['error', 'always', {null: 'ignore'}],
+    eqeqeq: ['error', 'always', { null: 'ignore' }],
     'no-eval': 'error',
     'no-with': 'error',
     'no-alert': 'error',
@@ -61,13 +61,34 @@ module.exports = {
     'no-var': 'error',
     'no-return-await': 'error',
     'require-await': 'warn',
-    'spaced-comment': ['warn', 'always', {
-      block: { balanced: true }
-    }],
+    'spaced-comment': [
+      'warn',
+      'always',
+      {
+        block: { balanced: true }
+      }
+    ],
 
     'prefer-const': 'error',
     'prefer-rest-params': 'error',
     'prefer-spread': 'error',
+
+    'prefer-destructuring': [
+      'error',
+      {
+        VariableDeclarator: {
+          array: false,
+          object: true
+        },
+        AssignmentExpression: {
+          array: true,
+          object: false
+        }
+      },
+      {
+        enforceForRenamedProperties: false
+      }
+    ],
 
     'no-underscore-dangle': 'off',
     'no-extra-parens': 'off',
