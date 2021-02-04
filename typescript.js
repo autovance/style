@@ -15,6 +15,8 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-parameter-properties': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
+
+    '@typescript-eslint/explicit-module-boundary-types': 'error',
     '@typescript-eslint/prefer-includes': 'error',
 
     '@typescript-eslint/require-await': 'warn',
