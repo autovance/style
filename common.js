@@ -21,6 +21,8 @@ module.exports = {
       }
     ],
 
+    'yield-star-spacing': ['error', 'after'],
+
     yoda: 'error',
     'consistent-return': 'warn',
 
@@ -56,7 +58,7 @@ module.exports = {
     'no-console': 'error',
     'no-array-constructor': 'error',
     'no-new-object': 'error',
-    'no-spaced-func': 'error',
+    'func-call-spacing': ['error', 'never'],
     'no-trailing-spaces': 'error',
     'no-var': 'error',
     'no-return-await': 'error',
