@@ -58,7 +58,7 @@ module.exports = {
     'no-console': 'error',
     'no-array-constructor': 'error',
     'no-new-object': 'error',
-    'func-call-spacing': ["error", "always"],
+    'func-call-spacing': ['error', 'never'],
     'no-trailing-spaces': 'error',
     'no-var': 'error',
     'no-return-await': 'error',
