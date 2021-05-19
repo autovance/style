@@ -7,7 +7,7 @@ module.exports = {
     '@autovance/eslint-config-autovance/common',
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/eslint-recommended',
-    'prettier/@typescript-eslint'
+    'prettier'
   ],
   rules: {
     'constructor-super': 'off',
