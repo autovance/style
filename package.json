@@ -53,12 +53,18 @@
     ]
   },
   "prettier": "./prettier",
+  "//": [
+    "See https://github.com/eslint/eslint/issues/3458 as to why we are using peer dependencies for plugins"
+  ],
   "peerDependencies": {
-    "@typescript-eslint/eslint-plugin": ">= 4",
-    "eslint": ">= 7",
-    "eslint-config-prettier": ">= 8",
-    "eslint-plugin-node": ">= 11",
-    "eslint-plugin-prettier": ">= 3",
+    "@typescript-eslint/eslint-plugin": "^4",
+    "eslint": "^7",
+    "eslint-config-prettier": "^8",
+    "eslint-plugin-node": "^11",
+    "eslint-plugin-prettier": "^3",
+    "eslint-plugin-promise": "^5",
+    "eslint-plugin-radar": "^0.2",
+    "eslint-plugin-regexp": "^0.11",
     "prettier": ">= 2"
   },
   "devDependencies": {
@@ -68,6 +74,9 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-radar": "^0.2.1",
+    "eslint-plugin-regexp": "^0.11.0",
     "prettier": "^2.3.0"
   },
   "release": {

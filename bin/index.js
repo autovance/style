@@ -39,10 +39,7 @@ async function promptFirstChar(question) {
       readline.close();
     });
   });
-  return response
-    .trim()
-    .toLowerCase()
-    .charAt(0);
+  return response.trim().toLowerCase().charAt(0);
 }
 
 async function getInstallPackages(type) {
@@ -90,7 +87,7 @@ async function setupConfig(path, type) {
   await writeFileAsync(path, JSON.stringify(packageJSON, null, 2));
 }
 
-void (async function() {
+void (async function () {
   const validLocation = await hasValidPackageJSON(packageJSONPath);
   if (!validLocation) {
     throw new Error('No package.json found in current directory.');

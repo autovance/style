@@ -1,13 +1,18 @@
-// These rules apply to both TS and JS and promote safety
-// and readability
+// These rules apply to both TS and JS and promote safety and readibility
 
 module.exports = {
-  extends: ['eslint:recommended', 'plugin:prettier/recommended'],
+  plugins: ['node', 'regexp', 'radar', 'promise'],
+  extends: [
+    'eslint:recommended',
+    'plugin:prettier/recommended',
+    'plugin:regexp/recommended',
+    'plugin:radar/recommended',
+    'plugin:promise/recommended'
+  ],
   env: {
     node: true,
     es6: true
   },
-  plugins: ['node'],
   rules: {
     'prettier/prettier': 'error',
 
