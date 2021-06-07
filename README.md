@@ -12,7 +12,7 @@
 ### Automatic
 
 ```
-npx @autovance/style
+npx @autovance/eslint-config-autovance
 ```
 
 ### Manual
