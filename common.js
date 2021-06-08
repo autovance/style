@@ -14,7 +14,7 @@ module.exports = {
     es6: true
   },
   rules: {
-    'prettier/prettier': 'error',
+    'prettier/prettier': 'off', // Set this on when you run your fix hooks, but usually you don't want to display this
 
     'no-restricted-syntax': [
       'warn',

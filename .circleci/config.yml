@@ -45,4 +45,4 @@ workflows:
           context: deploy-npm
           filters:
             branches:
-              only: master
+              only: main
