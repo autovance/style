@@ -66,6 +66,6 @@
     "prettier": "^2.3.0"
   },
   "release": {
-    "branch": "main"
+    "branches": ["main"]
   }
 }
