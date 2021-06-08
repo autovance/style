@@ -28,20 +28,6 @@
     "javascript"
   ],
   "author": "Matt Forster (@forstermatth)",
-  "contributors": [
-    {
-      "name": "Matt Forster",
-      "url": "https://mattforster.ca"
-    },
-    {
-      "name": "Tyler Stewart",
-      "url": "https://tylerstewart.ca"
-    },
-    {
-      "name": "Juan Monterosa",
-      "url": "https://github.com/Jl14Salvador"
-    }
-  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/autovance/style/issues"
@@ -53,21 +39,30 @@
     ]
   },
   "prettier": "./prettier",
+  "//": [
+    "See https://github.com/eslint/eslint/issues/3458 as to why we are using peer dependencies for plugins"
+  ],
   "peerDependencies": {
-    "@typescript-eslint/eslint-plugin": ">= 4",
-    "eslint": ">= 7",
-    "eslint-config-prettier": ">= 8",
-    "eslint-plugin-node": ">= 11",
-    "eslint-plugin-prettier": ">= 3",
+    "@typescript-eslint/eslint-plugin": "^4",
+    "eslint": "^7",
+    "eslint-config-prettier": "^8",
+    "eslint-plugin-node": "^11",
+    "eslint-plugin-prettier": "^3",
+    "eslint-plugin-promise": "^5",
+    "eslint-plugin-radar": "^0.2",
+    "eslint-plugin-regexp": "^0.11",
     "prettier": ">= 2"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.24.0",
-    "@typescript-eslint/parser": "^4.24.0",
-    "eslint": "^7.26.0",
+    "@typescript-eslint/eslint-plugin": "^4.26.0",
+    "@typescript-eslint/parser": "^4.26.0",
+    "eslint": "^7.27.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-radar": "^0.2.1",
+    "eslint-plugin-regexp": "^0.11.0",
     "prettier": "^2.3.0"
   },
   "release": {

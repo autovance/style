@@ -1,4 +1,4 @@
-// Rules that apply to typescript projects
+// Rules that apply to hybrid projects
 
 module.exports = {
   extends: [
